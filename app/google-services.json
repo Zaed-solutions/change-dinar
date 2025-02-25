@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "795901237871",
+    "project_id": "ayoubbenderdouch-59bd7",
+    "storage_bucket": "ayoubbenderdouch-59bd7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795901237871:android:dcdadb3de19a1ddddb8b9a",
+        "android_client_info": {
+          "package_name": "com.zaed.changedinar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi9eRZ6n9LDEkyycVyccaJdJPyW7UpMIA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

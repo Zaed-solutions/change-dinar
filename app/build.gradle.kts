@@ -102,9 +102,7 @@ dependencies {
     implementation(libs.koin.androidx.compose.navigation)
     //Firebase
     implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.auth.ktx)
-    implementation(libs.firebase.firestore.ktx)
-    implementation(libs.firebase.storage.ktx)
+    implementation(libs.firebase.messaging)
     //Google Fonts
     implementation(libs.androidx.ui.text.google.fonts)
     //Lottie
