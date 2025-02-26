@@ -5,9 +5,14 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.zaed.changedinar.data.model.Currency
+import com.zaed.changedinar.data.model.CurrencyIcon
 import com.zaed.changedinar.ui.currencies.components.CurrenciesList
 import com.zaed.changedinar.ui.currencies.components.CurrenciesTopAppBar
+import com.zaed.changedinar.ui.theme.ChangeDinarTheme
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
@@ -37,6 +42,7 @@ fun CurrenciesScreenContent(
         modifier = modifier,
         topBar = {
             CurrenciesTopAppBar(
+                modifier = Modifier.padding(horizontal = 16.dp),
                 onRefreshClicked = {
                     onAction(CurrenciesUiAction.OnRefreshClicked)
                 },
@@ -55,6 +61,29 @@ fun CurrenciesScreenContent(
             modifier = Modifier.padding(innerPadding),
             isOfficial = state.isOfficial,
             currencies = state.currencies
+        )
+    }
+}
+
+@Preview
+@Composable
+private fun ScreenPreview() {
+    ChangeDinarTheme {
+        CurrenciesScreenContent(
+            state = CurrenciesUiState(
+                currencies = listOf(
+                    Currency(
+                        icon = CurrencyIcon.AED,
+                        name = "United Arab Emirates Dirham",
+                        code = "AED",
+                        id = "1",
+                        officialPrice = 542.8585,
+                        unofficialSellPrice = 982.5,
+                        unofficialBuyPrice = 451742.5,
+                    )
+                )
+            ),
+            onAction = {}
         )
     }
 }

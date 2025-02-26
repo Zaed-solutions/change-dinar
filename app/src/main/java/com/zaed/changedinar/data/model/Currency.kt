@@ -2,7 +2,7 @@ package com.zaed.changedinar.data.model
 
 data class Currency(
     val icon: CurrencyIcon,
-    val id: String,
+    val id: Int,
     val code: String,
     val name: String,
     val officialPrice: Double,

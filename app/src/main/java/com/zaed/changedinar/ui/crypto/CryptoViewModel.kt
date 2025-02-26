@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.zaed.changedinar.data.model.CryptoModel
-import com.zaed.changedinar.data.source.remote.CryptoRemoteDataSource
+import com.zaed.changedinar.data.source.remote.RemoteDataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class CryptoViewModel (
-private val cryptoRemoteDataSource: CryptoRemoteDataSource
+private val remoteDataSource: RemoteDataSource
 ):ViewModel(){
     private val _uiState = MutableStateFlow(CryptoUiState())
     val uiState = _uiState.asStateFlow()
@@ -26,7 +26,7 @@ private val cryptoRemoteDataSource: CryptoRemoteDataSource
             _uiState.update {
                 it.copy(isLoading = true)
             }
-            cryptoRemoteDataSource.fetchCrypto().onSuccess {data->
+            remoteDataSource.fetchCrypto().onSuccess { data->
                 Log.d("TAG", "fetchCrypto vm: $data")
                 _uiState.update {
                     it.copy(cryptoList = data, isLoading = false)

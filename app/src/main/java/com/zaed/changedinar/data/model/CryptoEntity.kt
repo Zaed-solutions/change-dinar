@@ -31,7 +31,7 @@ enum class CryptoCode(
     ETHEREUM(code = "ethereum", title = "Ethereum", icon = R.drawable.ethereum_icon),
     SOLANA(code = "solana", title = "Solana", icon = R.drawable.solana_icon),
     BINANCE(code = "binancecoin", title = "Binance Coin", icon = R.drawable.bnb_icon),
-    RIPPLE(code = "ripple", title = "Ripple", icon = R.drawable.ripple_icon),
+    RIPPLE(code = "ripple", title = "XRP", icon = R.drawable.ripple_icon),
     CARDANO(code = "cardano", title = "Cardano", icon = R.drawable.cardano_icon),
     POLKADOT(code = "polkadot", title = "Polkadot", icon = R.drawable.polkadot_icon),
     SHIBA_INU(code = "shiba-inu", title = "Shiba Inu", icon = R.drawable.shiba_icon),

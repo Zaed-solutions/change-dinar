@@ -1,8 +1,7 @@
 package com.zaed.changedinar.app.di
 
-import android.system.Os.bind
-import com.zaed.changedinar.data.source.remote.CryptoRemoteDataSource
-import com.zaed.changedinar.data.source.remote.CryptoRemoteDataSourceImpl
+import com.zaed.changedinar.data.source.remote.RemoteDataSource
+import com.zaed.changedinar.data.source.remote.RemoteDataSourceImpl
 import com.zaed.changedinar.ui.crypto.CryptoViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -26,7 +25,7 @@ val appModule = module {
             }
         }
     }
-    singleOf(::CryptoRemoteDataSourceImpl) { bind<CryptoRemoteDataSource>() }
+    singleOf(::RemoteDataSourceImpl) { bind<RemoteDataSource>() }
     viewModelOf(::CryptoViewModel)
 }
 

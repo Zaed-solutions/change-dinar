@@ -18,6 +18,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -60,7 +61,11 @@ fun PriceItem(
         ){
             Text(
                 text = "$price",
-                style = MaterialTheme.typography.titleMedium,
+                style = MaterialTheme.typography.titleMedium.copy(
+                    fontSize = 18.sp,
+                    lineHeight = 18.sp,
+                    fontWeight = FontWeight.Bold
+                ),
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
             )

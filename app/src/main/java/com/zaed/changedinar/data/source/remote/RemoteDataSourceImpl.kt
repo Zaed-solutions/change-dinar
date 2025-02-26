@@ -11,14 +11,14 @@ import io.ktor.client.request.url
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
 
-class CryptoRemoteDataSourceImpl(
+class RemoteDataSourceImpl(
     private val httpClient: HttpClient
-) : CryptoRemoteDataSource {
-    private val baseUrl = "https://dzexchange-production.up.railway.app/api/v1/crypto"
+) : RemoteDataSource {
+    private val cryptoBaseUrl = "https://dzexchange-production.up.railway.app/api/v1/crypto"
     override suspend fun fetchCrypto(): Result<List<CryptoModel>> {
         try {
             val response = httpClient.get {
-                url(baseUrl)
+                url(cryptoBaseUrl)
                 contentType(ContentType.Application.Json)
             }
             if(response.status.value in 200..299){
