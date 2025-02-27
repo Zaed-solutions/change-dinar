@@ -1,8 +1,11 @@
 package com.zaed.changedinar.ui.electronic.component
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
@@ -11,6 +14,7 @@ import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -77,6 +81,13 @@ fun ElectronicsScreenContent(
                     .fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                androidx.compose.animation.AnimatedVisibility(uiState.isLoading) {
+                    LinearProgressIndicator(
+                        modifier = Modifier.fillMaxWidth().padding(vertical = 16.dp, horizontal = 16.dp),
+                        color = Color(0xFFA3D8FF),
+
+                    )
+                }
                 var selectedTab by remember { mutableStateOf(ElectronicCurrencyTab.EURO) }
                 CurrencySegmentedButton(
                     modifier = Modifier.padding(vertical = 16.dp).width(250.dp),

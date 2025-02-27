@@ -13,7 +13,7 @@ data class ElectronicUiState(
 )
 
 
-fun Date.format(dateFormat:String =  "d MMM, yyyy, hh:mm a"): String {
+fun Date.format(dateFormat:String =  "d/M/yy h:mm a"): String {
     val formatter = SimpleDateFormat(dateFormat, Locale.US)
     return formatter.format(this)
 }

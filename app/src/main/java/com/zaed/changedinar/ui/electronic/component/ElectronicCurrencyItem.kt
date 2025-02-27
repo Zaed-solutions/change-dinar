@@ -103,7 +103,7 @@ fun ElectronicCurrencyItem(
             ) {
                 Text(
                     text = electronicCurrency.currency_name,
-                    fontSize = 20.sp,
+                    fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
                 )
                 Text(
@@ -119,7 +119,7 @@ fun ElectronicCurrencyItem(
                 modifier = Modifier
                     .padding(end = 4.dp),
                 verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 Text(
                     text = "Min DZD",
@@ -128,7 +128,7 @@ fun ElectronicCurrencyItem(
                 )
                 Text(
                     text = minValue.toString(),
-                    fontSize = 20.sp,
+                    fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
                 )
             }

@@ -3,6 +3,7 @@ package com.zaed.changedinar.ui.crypto.component
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Replay
@@ -10,6 +11,7 @@ import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -64,6 +66,13 @@ fun CryptoScreenContent(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(text = "Dernière mise à jour: ${uiState.lastUpdate}")
+                androidx.compose.animation.AnimatedVisibility(uiState.isLoading) {
+                    LinearProgressIndicator(
+                        modifier = Modifier.fillMaxWidth().padding(vertical = 16.dp, horizontal = 16.dp),
+                        color = Color(0xFFA3D8FF),
+
+                        )
+                }
                 CryptoList(
                     modifier = Modifier
                         .fillMaxSize()
