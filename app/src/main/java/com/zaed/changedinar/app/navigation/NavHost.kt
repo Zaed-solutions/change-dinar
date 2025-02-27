@@ -10,6 +10,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.zaed.changedinar.ui.crypto.CryptoScreen
+import com.zaed.changedinar.ui.electronic.ElectronicsScreen
 
 @Composable
 fun NavigationHost(
@@ -19,7 +20,7 @@ fun NavigationHost(
     NavHost(
         modifier = modifier,
         navController = navController,
-        startDestination = Route.CryptoScreen,
+        startDestination = Route.ELECTRONIC_SCREEN.routeName,
         enterTransition = {
             fadeIn(
                 animationSpec = tween(
@@ -35,8 +36,11 @@ fun NavigationHost(
             )
         }
     ) {
-        composable<Route.CryptoScreen> {
+        composable(Route.CRYPTO_SCREEN.routeName) {
             CryptoScreen()
+        }
+        composable(Route.ELECTRONIC_SCREEN.routeName) {
+            ElectronicsScreen()
         }
 
     }
