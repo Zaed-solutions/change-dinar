@@ -17,6 +17,8 @@ fun CurrencyEntity.toCurrency(): Currency {
         icon = CurrencyIcon.valueOf(code),
         name = name,
         code = code,
+        symbol = symbol,
+        date = price.date,
         id = id,
         officialPrice = price.official_price.toDoubleOrNull() ?: 0.0,
         unofficialBuyPrice = price.unofficial_buy_price.toDoubleOrNull() ?: 0.0,

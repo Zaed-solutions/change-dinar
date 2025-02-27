@@ -118,7 +118,7 @@ fun CurrencyItem(
 private fun Preview() {
     val currency = Currency(
         icon = CurrencyIcon.USD,
-        id = "1",
+        id = 1,
         code = "USD",
         name = "US Dollar",
         officialPrice = 250.0,

@@ -2,7 +2,9 @@ package com.zaed.changedinar.app.di
 
 import com.zaed.changedinar.data.source.remote.RemoteDataSource
 import com.zaed.changedinar.data.source.remote.RemoteDataSourceImpl
+import com.zaed.changedinar.ui.converter.ConverterViewModel
 import com.zaed.changedinar.ui.crypto.CryptoViewModel
+import com.zaed.changedinar.ui.currencies.CurrenciesViewModel
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.serialization.kotlinx.json.json
@@ -27,5 +29,7 @@ val appModule = module {
     }
     singleOf(::RemoteDataSourceImpl) { bind<RemoteDataSource>() }
     viewModelOf(::CryptoViewModel)
+    viewModelOf(::CurrenciesViewModel)
+    viewModelOf(::ConverterViewModel)
 }
 
