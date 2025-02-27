@@ -16,12 +16,15 @@ fun CurrenciesList(
     isOfficial: Boolean,
     currencies: List<Currency>
 ) {
-    LazyColumn (
+    LazyColumn(
         modifier = modifier.fillMaxWidth(),
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 32.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
-    ){
-        items(currencies){ currency ->
+        verticalArrangement = Arrangement.spacedBy(10.dp)
+    ) {
+        items(
+            items = currencies,
+            key = { it.id }
+        ) { currency ->
             CurrencyItem(
                 modifier = Modifier.animateItem(),
                 isOfficial = isOfficial,

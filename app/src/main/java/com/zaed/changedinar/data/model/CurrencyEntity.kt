@@ -12,3 +12,17 @@ data class CurrencyEntity(
 )
 
 
+fun CurrencyEntity.toCurrency(): Currency {
+    return Currency(
+        icon = CurrencyIcon.valueOf(code),
+        name = name,
+        code = code,
+        symbol = symbol,
+        date = price.date,
+        id = id,
+        officialPrice = price.official_price.toDoubleOrNull() ?: 0.0,
+        unofficialBuyPrice = price.unofficial_buy_price.toDoubleOrNull() ?: 0.0,
+        unofficialSellPrice = price.unofficial_sell_price.toDoubleOrNull() ?: 0.0
+    )
+}
+

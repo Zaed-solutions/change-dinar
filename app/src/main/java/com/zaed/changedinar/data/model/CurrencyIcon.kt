@@ -6,6 +6,7 @@ enum class CurrencyIcon(val iconRes: Int) {
     EUR(R.drawable.ic_euro),
     USD( R.drawable.ic_usd),
     GBP( R.drawable.ic_gbp),
+    DZD( R.drawable.ic_dzd),
     CHF( R.drawable.ic_sfr),
     TRY( R.drawable.ic_try),
     CAD( R.drawable.ic_cad),

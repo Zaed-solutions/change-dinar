@@ -9,8 +9,10 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.zaed.changedinar.ui.converter.ConverterScreen
 import com.zaed.changedinar.ui.crypto.CryptoScreen
 import com.zaed.changedinar.ui.electronic.ElectronicsScreen
+import com.zaed.changedinar.ui.currencies.CurrenciesScreen
 
 @Composable
 fun NavigationHost(
@@ -38,6 +40,12 @@ fun NavigationHost(
     ) {
         composable(Route.CRYPTO_SCREEN.routeName) {
             CryptoScreen()
+        }
+        composable<Route.CurrenciesScreen> {
+            CurrenciesScreen()
+        }
+        composable<Route.ConverterRoute> {
+            ConverterScreen()
         }
         composable(Route.ELECTRONIC_SCREEN.routeName) {
             ElectronicsScreen()

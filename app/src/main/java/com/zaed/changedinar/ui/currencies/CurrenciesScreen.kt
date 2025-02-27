@@ -74,7 +74,7 @@ private fun ScreenPreview() {
                 currencies = listOf(
                     Currency(
                         icon = CurrencyIcon.AED,
-                        name = "United Arab Emirates Dirham",
+                        name = "UAE Dirham",
                         code = "AED",
                         id = 1,
                         officialPrice = 542.8585,
