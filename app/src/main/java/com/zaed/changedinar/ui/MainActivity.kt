@@ -73,9 +73,7 @@ fun App() {
     ) {
         Scaffold(
             modifier = Modifier
-                .fillMaxSize()
-                .imePadding(),
-
+                .fillMaxSize(),
             containerColor = Color.Transparent,
             contentColor = LocalContentColor.current,
 

@@ -3,6 +3,7 @@ package com.zaed.changedinar.ui.currencies
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Scaffold
@@ -44,7 +45,7 @@ fun CurrenciesScreenContent(
     onAction: (CurrenciesUiAction) -> Unit
 ) {
     Scaffold (
-        modifier = modifier,
+        modifier = modifier.imePadding(),
         containerColor = Color.Transparent,
         topBar = {
             CurrenciesTopAppBar(

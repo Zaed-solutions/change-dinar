@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Replay
@@ -31,6 +32,7 @@ fun CryptoScreenContent(
     onRefresh: () -> Unit = {}
 ) {
     Scaffold(
+        modifier = modifier.imePadding(),
         topBar = {
             CenterAlignedTopAppBar(
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
@@ -40,7 +42,7 @@ fun CryptoScreenContent(
                 title = {
                     Text(text = "Crypto")
                 },
-                actions = {
+                navigationIcon = {
                     IconButton(
                         onClick = onRefresh,
                     ) {

@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
@@ -44,6 +45,7 @@ fun ElectronicsScreenContent(
     onRefresh: () -> Unit = {}
 ) {
     Scaffold(
+        modifier = modifier.imePadding(),
         contentWindowInsets = WindowInsets( 0),
                 containerColor = Color.Transparent,
         topBar = {
@@ -55,7 +57,7 @@ fun ElectronicsScreenContent(
                 title = {
                     Text(text = "Monnaie Numérique")
                 },
-                actions = {
+                navigationIcon = {
                     IconButton(
                         onClick = onRefresh
                     ) {
@@ -81,13 +83,7 @@ fun ElectronicsScreenContent(
                     .fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                androidx.compose.animation.AnimatedVisibility(uiState.isLoading) {
-                    LinearProgressIndicator(
-                        modifier = Modifier.fillMaxWidth().padding(vertical = 16.dp, horizontal = 16.dp),
-                        color = Color(0xFFA3D8FF),
 
-                    )
-                }
                 var selectedTab by remember { mutableStateOf(ElectronicCurrencyTab.EURO) }
                 CurrencySegmentedButton(
                     modifier = Modifier.padding(vertical = 16.dp).width(250.dp),
@@ -98,6 +94,13 @@ fun ElectronicsScreenContent(
                     }
                 )
                 Text(text = "Dernière mise à jour: ${uiState.lastUpdate}")
+                androidx.compose.animation.AnimatedVisibility(uiState.isLoading) {
+                    LinearProgressIndicator(
+                        modifier = Modifier.fillMaxWidth().padding(vertical = 16.dp, horizontal = 16.dp),
+                        color = Color(0xFFA3D8FF),
+
+                        )
+                }
                 ElectronicsList(
                     modifier = Modifier
                         .fillMaxSize()
