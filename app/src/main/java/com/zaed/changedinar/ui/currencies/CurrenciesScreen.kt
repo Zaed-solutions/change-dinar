@@ -76,7 +76,7 @@ private fun ScreenPreview() {
                         icon = CurrencyIcon.AED,
                         name = "United Arab Emirates Dirham",
                         code = "AED",
-                        id = "1",
+                        id = 1,
                         officialPrice = 542.8585,
                         unofficialSellPrice = 982.5,
                         unofficialBuyPrice = 451742.5,
