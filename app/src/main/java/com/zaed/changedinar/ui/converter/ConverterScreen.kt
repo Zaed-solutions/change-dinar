@@ -128,6 +128,7 @@ fun ConverterScreenContent(
             BreathingAppIcon(
                 modifier = Modifier.padding(bottom= 96.dp),
             )
+            Spacer(modifier = Modifier)
             //bottom sheet
             SelectCurrencyBottomSheet(
                 isVisible = isBottomSheetVisible,
