@@ -1,10 +1,10 @@
 package com.zaed.changedinar.ui.currencies.components
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -21,8 +21,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -35,17 +39,17 @@ fun CurrenciesTopAppBar(
     lastRefreshed: String,
     isOfficial: Boolean,
     onOfficialSwitchClicked: (Boolean) -> Unit,
-){
-    Column (
+) {
+    Column(
         modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(10.dp),
         horizontalAlignment = Alignment.CenterHorizontally
-    ){
-        Row (
+    ) {
+        Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
-        ){
+        ) {
             IconButton(
                 onClick = {
                     onRefreshClicked()
@@ -76,7 +80,7 @@ fun CurrenciesTopAppBar(
                 )
             }
         }
-        Row{
+        Row {
             Text(
                 text = "Dernière mise à jour : ",
                 style = MaterialTheme.typography.bodyMedium.copy(
@@ -93,11 +97,14 @@ fun CurrenciesTopAppBar(
                 )
             )
         }
+
         SingleChoiceSegmentedButtonRow(
-            modifier = Modifier.fillMaxWidth(),
-        ){
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 10.dp),
+        ) {
             SegmentedButton(
-                modifier= Modifier.weight(1f),
+                modifier = Modifier.weight(1f),
                 selected = !isOfficial,
                 onClick = {
                     onOfficialSwitchClicked(false)
@@ -122,7 +129,7 @@ fun CurrenciesTopAppBar(
                 )
             }
             SegmentedButton(
-                modifier= Modifier.weight(1f),
+                modifier = Modifier.weight(1f),
                 selected = isOfficial,
                 onClick = {
                     onOfficialSwitchClicked(true)
@@ -148,5 +155,17 @@ fun CurrenciesTopAppBar(
             }
         }
     }
+}
 
+@Preview(showSystemUi = true, showBackground = true, device = "id:pixel_9_pro")
+@Composable
+private fun Preview() {
+    CurrenciesTopAppBar(
+        modifier = Modifier.padding(top = 24.dp),
+        lastRefreshed = "2022-02-02 02:02:02",
+        isOfficial = true,
+        onRefreshClicked = {},
+        onInfoClicked = {},
+        onOfficialSwitchClicked = {}
+    )
 }
