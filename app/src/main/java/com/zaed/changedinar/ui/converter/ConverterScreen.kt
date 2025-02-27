@@ -63,6 +63,7 @@ fun ConverterScreenContent(
     var isBottomSheetVisible by remember { mutableStateOf(false) }
     val focusRequester = remember { FocusRequester() }
     Scaffold(
+        containerColor = Color.Transparent,
         modifier = modifier.fillMaxSize(),
         topBar = {
             ConverterTopAppBar(

@@ -1,10 +1,15 @@
 package com.zaed.changedinar.ui.currencies
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -40,6 +45,7 @@ fun CurrenciesScreenContent(
 ) {
     Scaffold (
         modifier = modifier,
+        containerColor = Color.Transparent,
         topBar = {
             CurrenciesTopAppBar(
                 modifier = Modifier.padding(horizontal = 16.dp),
@@ -57,11 +63,22 @@ fun CurrenciesScreenContent(
             )
         }
     ){ innerPadding ->
-        CurrenciesList(
-            modifier = Modifier.padding(innerPadding),
-            isOfficial = state.isOfficial,
-            currencies = state.currencies
-        )
+        Column(
+            modifier = Modifier.padding(innerPadding).fillMaxSize()
+        ) {
+            androidx.compose.animation.AnimatedVisibility(state.isLoading) {
+                LinearProgressIndicator(
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 16.dp, horizontal = 16.dp),
+                    color = Color(0xFFA3D8FF),
+
+                    )
+            }
+            CurrenciesList(
+                modifier = Modifier,
+                isOfficial = state.isOfficial,
+                currencies = state.currencies
+            )
+        }
     }
 }
 

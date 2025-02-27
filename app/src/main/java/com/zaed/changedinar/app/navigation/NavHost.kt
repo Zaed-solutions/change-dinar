@@ -11,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.zaed.changedinar.ui.converter.ConverterScreen
 import com.zaed.changedinar.ui.crypto.CryptoScreen
+import com.zaed.changedinar.ui.electronic.ElectronicsScreen
 import com.zaed.changedinar.ui.currencies.CurrenciesScreen
 
 @Composable
@@ -21,7 +22,7 @@ fun NavigationHost(
     NavHost(
         modifier = modifier,
         navController = navController,
-        startDestination = Route.ConverterRoute,
+        startDestination = Route.ELECTRONIC_SCREEN.routeName,
         enterTransition = {
             fadeIn(
                 animationSpec = tween(
@@ -37,14 +38,17 @@ fun NavigationHost(
             )
         }
     ) {
-        composable<Route.CryptoScreen> {
+        composable(Route.CRYPTO_SCREEN.routeName) {
             CryptoScreen()
         }
-        composable<Route.CurrenciesScreen> {
+        composable(Route.CURRENCIES_SCREEN.routeName) {
             CurrenciesScreen()
         }
-        composable<Route.ConverterRoute> {
+        composable(Route.CONVERTER_SCREEN.routeName) {
             ConverterScreen()
+        }
+        composable(Route.ELECTRONIC_SCREEN.routeName) {
+            ElectronicsScreen()
         }
 
     }
