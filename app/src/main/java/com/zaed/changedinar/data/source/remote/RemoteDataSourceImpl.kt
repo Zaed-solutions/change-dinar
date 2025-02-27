@@ -5,7 +5,6 @@ import com.zaed.changedinar.data.model.CryptoEntity
 import com.zaed.changedinar.data.model.CryptoModel
 import com.zaed.changedinar.data.model.Currency
 import com.zaed.changedinar.data.model.CurrencyEntity
-import com.zaed.changedinar.data.model.toCrypto
 import com.zaed.changedinar.data.model.toCurrency
 import com.zaed.changedinar.data.mapper.toCrypto
 import com.zaed.changedinar.data.mapper.toElectronicCurrency

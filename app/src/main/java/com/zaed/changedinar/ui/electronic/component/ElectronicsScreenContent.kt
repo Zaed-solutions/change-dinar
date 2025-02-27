@@ -49,7 +49,7 @@ fun ElectronicsScreenContent(
                 ),
                         windowInsets = WindowInsets(0),
                 title = {
-                    Text(text = "Numerical Money")
+                    Text(text = "Monnaie Numérique")
                 },
                 actions = {
                     IconButton(
@@ -86,7 +86,7 @@ fun ElectronicsScreenContent(
                         selectedTab = currency
                     }
                 )
-                Text(text = "Last Update: ${uiState.lastUpdate}")
+                Text(text = "Dernière mise à jour: ${uiState.lastUpdate}")
                 ElectronicsList(
                     modifier = Modifier
                         .fillMaxSize()

@@ -63,7 +63,7 @@ fun CryptoScreenContent(
                     .fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(text = "Last Update: ${uiState.lastUpdate}")
+                Text(text = "Dernière mise à jour: ${uiState.lastUpdate}")
                 CryptoList(
                     modifier = Modifier
                         .fillMaxSize()

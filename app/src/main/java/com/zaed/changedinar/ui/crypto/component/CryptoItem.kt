@@ -87,24 +87,7 @@ fun CryptoItem(
                     textAlign = TextAlign.End,
                     fontWeight = FontWeight.Bold,
                 )
-//                Row(
-//                    modifier = Modifier.fillMaxWidth(),
-//                    horizontalArrangement = Arrangement.End
-//                ) {
-//                    Text(
-//                        text = "-10.5%",
-//                        modifier=Modifier,
-//                        fontSize = 15.sp,
-//                        color = MaterialTheme.colorScheme.error,
-//                        textAlign = TextAlign.End,
-//                        fontWeight = FontWeight.Normal,
-//                    )
-//                    Icon(
-//                        painter = painterResource(R.drawable.arrow_down) ,
-//                        tint = MaterialTheme.colorScheme.error,
-//                        contentDescription = null,
-//                    )
-//                }
+
             }
 
         }
