@@ -41,10 +41,10 @@ fun NavigationHost(
         composable(Route.CRYPTO_SCREEN.routeName) {
             CryptoScreen()
         }
-        composable<Route.CurrenciesScreen> {
+        composable(Route.CURRENCIES_SCREEN.routeName) {
             CurrenciesScreen()
         }
-        composable<Route.ConverterRoute> {
+        composable(Route.CONVERTER_SCREEN.routeName) {
             ConverterScreen()
         }
         composable(Route.ELECTRONIC_SCREEN.routeName) {

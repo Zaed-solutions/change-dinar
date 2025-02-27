@@ -25,6 +25,16 @@ import com.zaed.changedinar.R
 fun BottomNavigation(navController: NavController, modifier: Modifier) {
     val items = listOf(
         BottomNavItem(
+            title = "Currencies",
+            route = Route.CURRENCIES_SCREEN.routeName,
+            icon = R.drawable.ic_currency // Add this icon resource
+        ),
+        BottomNavItem(
+            title = "Converter",
+            route = Route.CONVERTER_SCREEN.routeName,
+            icon = R.drawable.calculate_amount_image // Add this icon resource
+        ),
+        BottomNavItem(
             title = "Electronics",
             route = Route.ELECTRONIC_SCREEN.routeName,
             icon = R.drawable.ic_num_money // Add this icon resource
@@ -33,7 +43,7 @@ fun BottomNavigation(navController: NavController, modifier: Modifier) {
             title = "Crypto",
             route = Route.CRYPTO_SCREEN.routeName,
             icon = R.drawable.ic_crypto // Add this icon resource
-        )
+        ),
     )
 
     NavigationBar(

@@ -66,7 +66,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun App() {
     val navController = rememberNavController()
-    val context = LocalContext.current
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -76,9 +75,7 @@ fun App() {
             modifier = Modifier
                 .fillMaxSize()
                 .imePadding(),
-//            bottomBar = {
-//                BottomNavigation(navController = navController)
-//            },
+
             containerColor = Color.Transparent,
             contentColor = LocalContentColor.current,
 
