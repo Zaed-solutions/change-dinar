@@ -22,7 +22,7 @@ fun NavigationHost(
     NavHost(
         modifier = modifier,
         navController = navController,
-        startDestination = Route.ELECTRONIC_SCREEN.routeName,
+        startDestination = Route.CURRENCIES_SCREEN.routeName,
         enterTransition = {
             fadeIn(
                 animationSpec = tween(
