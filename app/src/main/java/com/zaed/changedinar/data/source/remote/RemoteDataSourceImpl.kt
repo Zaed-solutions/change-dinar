@@ -26,14 +26,14 @@ class RemoteDataSourceImpl(
     private val currenciesBaseUrl = "https://dzexchange-production.up.railway.app/api/v1/today"
     override suspend fun fetchCrypto(): Result<List<CryptoModel>> {
         try {
+            Log.d("TAGo", "start Api Call")
             val response = httpClient.get {
                 url(cryptoBaseUrl)
                 contentType(ContentType.Application.Json)
             }
-            if(response.status.value in 200..299){
-                Log.d("TAG", "fetchCrypto: ${response.body<List<CryptoEntity>>()}")
+            Log.d("TAGo", "api response received: ${response.status}")
+            if(response.status == HttpStatusCode.OK){
                 val result = response.body<List<CryptoEntity>>().map { it.toCrypto() }
-                Log.d("TAG", "fetchCrypto: $result")
                 return Result.success(result)
             }else{
                 return Result.failure(Exception("Error: ${response.status.value}"))
@@ -49,10 +49,8 @@ class RemoteDataSourceImpl(
                 url(electronicBaseUrl)
                 contentType(ContentType.Application.Json)
             }
-            if(response.status.value in 200..299){
-                Log.d("TAG", "fetchElectronics: ${response.body<List<ElectronicCurrencyEntity>>()}")
+            if(response.status == HttpStatusCode.OK){
                 val result = response.body<List<ElectronicCurrencyEntity>>().map { it.toElectronicCurrency() }
-                Log.d("TAG", "fetchElectronics: $result")
                 return Result.success(result)
             }else{
                 return Result.failure(Exception("Error: ${response.status.value}"))

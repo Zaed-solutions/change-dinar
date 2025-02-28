@@ -28,7 +28,6 @@ private val remoteDataSource: RemoteDataSource
                 it.copy(isLoading = true)
             }
             remoteDataSource.fetchCrypto().onSuccess { data->
-                Log.d("TAG", "fetchCrypto vm: $data")
                 _uiState.update {
                     it.copy(cryptoList = data, isLoading = false, lastUpdate = data.firstOrNull()?.recorded_at?.format()?: Date().format())
                 }
