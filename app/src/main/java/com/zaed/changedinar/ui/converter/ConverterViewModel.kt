@@ -65,7 +65,7 @@ class ConverterViewModel(
             _uiState.update {
                 it.copy(
                     originalAmount = amount,
-                    convertedAmount = amount * it.selectedCurrency.officialPrice)
+                    convertedAmount = amount * it.selectedCurrency.unofficialBuyPrice)
             }
         }
     }
